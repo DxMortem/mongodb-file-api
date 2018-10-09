@@ -44,12 +44,12 @@ public class RESTController {
     @CrossOrigin("*")
     @PostMapping("/files")
     public String handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
-        gridFsTemplate.store(file.getInputStream(), file.getName(), file.getContentType());
-        return null;
+        return gridFsTemplate.store(file.getInputStream(), file.getName(), file.getContentType()).toString();
     }
 
     @CrossOrigin("*")
     @PostMapping("/todo")
+
     public Todo createTodo(@RequestBody Todo todo) {
         //TODO implement method
         return null;
